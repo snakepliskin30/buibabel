@@ -15,7 +15,7 @@ document.querySelectorAll("[data-tab-link").forEach((e) => {
 const contactLink = document.getElementById("contacts-table");
 contactLink.addEventListener("click", callAlert);
 
-export let Global = {};
+//export let Global = {};
 
 export const records = [
   {

@@ -1,17 +1,16 @@
-import { Global, records } from "./app";
-
+//import { Global, records } from "./app";
 let table = {};
 
 export function adjustTable() {
   table.columns.adjust().draw();
 }
 
-export async function getData() {
+export function getData() {
   //const response = await fetch("http://localhost:3001/contacts/");
-  //Global.contacts = records;
-  //console.log(Global.contacts);
+  //global.contacts = records;
+  //console.log(global.contacts);
   //console.log(records);
-  console.log(global.contacts);
+  //console.log(global.contacts);
   //showContactBtn.disabled = false;
   ShowContactsTable();
   const data = localStorage.getItem("accountData");
@@ -25,13 +24,13 @@ export function callAlert(e) {
   e.stopPropagation();
   if (e.target.classList.contains("dataColumnLink")) {
     const id = e.target.getAttribute("data-id");
-    let contactObj = Global.contacts.find((contact) => contact.id == id);
-    Global.selectedContact = contactObj;
+    let contactObj = global.contacts.find((contact) => contact.id == id);
+    global.selectedContact = contactObj;
     //const contactpanel = document.getElementById("detalye");
     const test = $("#firstName");
-    $("#selectedcontactfname").text(Global.selectedContact.firstName);
-    $("#selectedcontactlname").text(Global.selectedContact.lastName);
-    $("#selectedcontactdob").text(Global.selectedContact.dob);
+    $("#selectedcontactfname").text(global.selectedContact.firstName);
+    $("#selectedcontactlname").text(global.selectedContact.lastName);
+    $("#selectedcontactdob").text(global.selectedContact.dob);
   }
 }
 
@@ -39,7 +38,7 @@ export function ShowContactsTable() {
   table = $("#contacts-table").DataTable();
   table.destroy();
   //console.log("test");
-  //console.log(Global.contacts);
+  //console.log(global.contacts);
   let contacts = global.contacts;
   table = $("#contacts-table").DataTable({
     data: contacts,
