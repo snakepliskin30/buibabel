@@ -3,4 +3,4 @@ require("datatables.net");
 // import dt from "datatables.net";
 // dt(window, $);
 
-import "bootstrap";
+//import "bootstrap";
