@@ -28,13 +28,13 @@ body {
 .banner {
   height: 80px;
   width: 100vw;
-  background-color: var(--bg-primary);
+  background-color: #0178bb;
 }
 
 .footer {
   height: 40px;
   width: 100vw;
-  background-color: var(--bg-yellow);
+  background-color: #ffc72c;
 }
 
 .container-360 {
@@ -149,7 +149,7 @@ body {
 
 /* Colors */
 .color-primary {
-  color: var(--bg-primary);
+  color: #0178bb;
 }
 
 .color-light {
@@ -157,27 +157,27 @@ body {
 }
 
 .bg-bluegreen {
-  background: var(--bg-bluegreen);
+  background: #00a8b6;
 }
 
 .bg-orange {
-  background: var(--bg-orange);
+  background: #e87722;
 }
 
 .bg-purple {
-  background: var(--bg-purple);
+  background: #9367b9;
 }
 
 .bg-yellow {
-  background: var(--bg-yellow);
+  background: #ffc72c;
 }
 
 .bg-green {
-  background: var(--bg-green);
+  background: #78be20;
 }
 
 .bg-primary {
-  background: var(--bg-primary);
+  background: #0178bb;
 }
 /* End of Colors*/
 
@@ -274,7 +274,7 @@ h3 {
   border-left: 1px solid #e6e6e6;
   border-right: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
-  border-top: 3px solid var(--bg-primary);
+  border-top: 3px solid #0178bb;
 }
 
 .card-360-layout {
@@ -357,7 +357,7 @@ h3 {
   height: 25px;
   width: 25px;
   border: 5px solid #fff;
-  border-top-color: var(--bg-primary);
+  border-top-color: #0178bb;
   border-radius: 50%;
   animation: loading 1s linear infinite;
 }
@@ -426,7 +426,7 @@ h3 {
   bottom: 0;
   height: 3px;
   width: 100%;
-  background-color: var(--bg-primary);
+  background-color: #0178bb;
 }
 
 .tab-360 > .tab-list > li:not(.active)::before {
@@ -436,7 +436,7 @@ h3 {
   bottom: 0;
   height: 3px;
   width: 100%;
-  background-color: var(--bg-orange);
+  background-color: #e87722;
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.15s linear;

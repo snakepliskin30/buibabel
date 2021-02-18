@@ -2,7 +2,7 @@ import "../css/styles.css";
 import { activateTab, closeTab, goToTab } from "./nav";
 import { getData, callAlert, ShowContactsTable } from "./contacts";
 
-//document.addEventListener("DOMContentLoaded", getData);
+//document.addEventListener("DOMContentLoaded", getAsyncData);
 
 document
   .querySelectorAll("[data-tab-target]")
@@ -11,6 +11,8 @@ document
 document.querySelectorAll("[data-tab-link").forEach((e) => {
   e.addEventListener("click", goToTab);
 });
+
+document.getElementById("viewAllBtn").addEventListener("click", getAsyncData);
 
 const contactLink = document.getElementById("contacts-table");
 contactLink.addEventListener("click", callAlert);
@@ -87,3 +89,14 @@ export const records = [
 ];
 
 global.contacts = records;
+
+async function getAsyncData() {
+  console.log("async invoked");
+
+  const result = await $.get("http://localhost:3001/contacts");
+  console.log(result.find((c) => c.id == 12).firstName);
+  // const result = await fetch("http://localhost:3001/contacts");
+  // console.log(result);
+  // const data = await result.json();
+  // console.log(data);
+}

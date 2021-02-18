@@ -72,6 +72,10 @@ module.exports = merge(common, {
                 //   debug: true,
                 //   modules: false, // defaults to auto
                 // },
+                {
+                  useBuiltIns: "usage",
+                  corejs: 3.8,
+                },
               ],
             ],
           },
