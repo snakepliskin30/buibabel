@@ -59,7 +59,7 @@ module.exports = merge(common, {
                 {
                   debug: true,
                   useBuiltIns: "usage",
-                  corejs: 3.8,
+                  corejs: "3.0.0",
                 },
               ],
             ],
