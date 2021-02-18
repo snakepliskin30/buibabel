@@ -1,4 +1,9 @@
 import "../css/styles.css";
+
+import "core-js/stable/promise";
+import "regenerator-runtime/runtime";
+import "whatwg-fetch";
+
 import { activateTab, closeTab, goToTab } from "./nav";
 import { getData, callAlert, ShowContactsTable } from "./contacts";
 
@@ -93,10 +98,9 @@ global.contacts = records;
 async function getAsyncData() {
   console.log("async invoked");
 
-  const result = await $.get("http://localhost:3001/contacts");
-  console.log(result.find((c) => c.id == 12).firstName);
-  // const result = await fetch("http://localhost:3001/contacts");
-  // console.log(result);
-  // const data = await result.json();
-  // console.log(data);
+  //const result = await $.get("http://localhost:3001/contacts");
+  //console.log(result.find((c) => c.id == 12).firstName);
+  const result = await fetch("http://localhost:3001/contacts");
+  const data = await result.json();
+  console.log(data.find((d) => d.id == 171).firstName);
 }
