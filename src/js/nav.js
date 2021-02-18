@@ -1,6 +1,7 @@
 import { table, adjustTable, getData } from "./contacts";
 
 export function activateTab(e) {
+  console.log("tab-changed");
   const tabs = document.querySelectorAll("[data-tab-target]");
   const tabContents = document.querySelectorAll("[data-tab-content]");
   //LOOP THRU ALL TABS AND REMOVE THE ACTIVE

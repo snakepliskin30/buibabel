@@ -1,7 +1,8 @@
 const path = require("path");
 const common = require("./webpack.common");
 const { merge } = require("webpack-merge");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPartialsPlugin = require("html-webpack-partials-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -32,6 +33,21 @@ module.exports = merge(common, {
         removeComments: true,
       },
     }),
+    new HtmlWebpackPartialsPlugin({
+      path: path.join(__dirname, "./src/views/partials/main_360.html"),
+      location: "main_tab",
+      template_filename: ["index-[contenthash].html"],
+    }),
+    new HtmlWebpackPartialsPlugin({
+      path: path.join(__dirname, "./src/views/partials/contacts_tab.html"),
+      location: "contacts_tab",
+      template_filename: ["index-[contenthash].html"],
+    }),
+    new HtmlWebpackPartialsPlugin({
+      path: path.join(__dirname, "./src/views/partials/sub_accounts_tab.html"),
+      location: "sub_account_tab",
+      template_filename: ["index-[contenthash].html"],
+    }),
   ],
   module: {
     rules: [
@@ -45,7 +61,7 @@ module.exports = merge(common, {
       },
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
+        exclude: /(node_modules)/,
         use: {
           loader: "babel-loader",
           options: {
@@ -56,6 +72,10 @@ module.exports = merge(common, {
                 //   debug: true,
                 //   modules: false, // defaults to auto
                 // },
+                {
+                  useBuiltIns: "usage",
+                  corejs: 3.8,
+                },
               ],
             ],
           },
