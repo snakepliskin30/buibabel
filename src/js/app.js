@@ -1,4 +1,8 @@
-import "../css/styles.css";
+import "../css/utilities.css";
+import "../css/navbar.css";
+import "../css/main.css";
+import "../css/panel.css";
+import "../css/media.css"; // always keep this css file imported last
 
 import "core-js/stable/promise";
 import "regenerator-runtime/runtime";
@@ -21,8 +25,6 @@ document.getElementById("viewAllBtn").addEventListener("click", getAsyncData);
 
 const contactLink = document.getElementById("contacts-table");
 contactLink.addEventListener("click", callAlert);
-
-//export let Global = {};
 
 export const records = [
   {
