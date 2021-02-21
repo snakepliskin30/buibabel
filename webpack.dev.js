@@ -7,12 +7,15 @@ const HtmlWebpackPartialsPlugin = require("html-webpack-partials-plugin");
 module.exports = merge(common, {
   mode: "development",
   devtool: "source-map",
+  target: "web",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.js",
   },
   devServer: {
     overlay: true,
+    watchContentBase: true,
+    hot: true,
   },
   plugins: [
     new HtmlWebpackPlugin({

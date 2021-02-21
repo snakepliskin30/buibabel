@@ -42,7 +42,7 @@ export const records = [
   {
     id: 123,
     firstName: "Elly",
-    lastName: "Buendia",
+    lastName: "Mike",
     dob: "1982-01-21",
   },
   {
@@ -60,7 +60,7 @@ export const records = [
   {
     id: 16,
     firstName: "Maritez",
-    lastName: "Samson",
+    lastName: "Martin",
     dob: "1983-11-18",
   },
   {
@@ -105,4 +105,8 @@ async function getAsyncData() {
   const result = await fetch("http://localhost:3001/contacts");
   const data = await result.json();
   console.log(data.find((d) => d.id == 171).firstName);
+}
+
+if (module.hot) {
+  module.hot.accept();
 }

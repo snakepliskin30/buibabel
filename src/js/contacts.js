@@ -79,6 +79,24 @@ export function ShowContactsTable() {
       },
     ],
   });
+  $("#contacts-table tbody").on("click", "tr", function () {
+    if ($(this).hasClass("selected")) {
+      $(this).removeClass("selected");
+      global.selectedContact = {};
+
+      $("#selectedcontactfname").text("");
+      $("#selectedcontactlname").text("");
+      $("#selectedcontactdob").text("");
+    } else {
+      table.$("tr.selected").removeClass("selected");
+      $(this).addClass("selected");
+      global.selectedContact = table.row(this).data();
+
+      $("#selectedcontactfname").text(global.selectedContact.firstName);
+      $("#selectedcontactlname").text(global.selectedContact.lastName);
+      $("#selectedcontactdob").text(global.selectedContact.dob);
+    }
+  });
 }
 
 //END OF CONTACTS
