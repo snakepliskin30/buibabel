@@ -42,7 +42,7 @@ export const records = [
   {
     id: 123,
     firstName: "Elly",
-    lastName: "Mike",
+    lastName: "Buendia",
     dob: "1982-01-21",
   },
   {
@@ -107,6 +107,7 @@ async function getAsyncData() {
   console.log(data.find((d) => d.id == 171).firstName);
 }
 
-if (module.hot) {
-  module.hot.accept();
-}
+//FOR HMR
+// if (module.hot) {
+//   module.hot.accept();
+// }

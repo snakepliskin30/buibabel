@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 const common = require("./webpack.common");
 const { merge } = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -14,10 +15,11 @@ module.exports = merge(common, {
   },
   devServer: {
     overlay: true,
-    watchContentBase: true,
-    hot: true,
+    watchContentBase: true, //set to false for hmr
+    //hotOnly: true, //enable this setting for hmr
   },
   plugins: [
+    //new webpack.HotModuleReplacementPlugin(), //include for hmr
     new HtmlWebpackPlugin({
       template: "./src/template.html",
       inject: "body",
