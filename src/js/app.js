@@ -11,7 +11,13 @@ import "whatwg-fetch";
 import { activateTab, closeTab, goToTab } from "./nav";
 import { getData, callAlert, ShowContactsTable } from "./contacts";
 
-//document.addEventListener("DOMContentLoaded", getAsyncData);
+document.addEventListener("DOMContentLoaded", () => {
+  let contactObj = JSON.parse(localStorage.getItem("contactObj"));
+  localStorage.removeItem("contactObj");
+  document.getElementById("acct-num").innerText = contactObj.acctnum;
+  document.getElementById("acct-name").innerText =
+    contactObj.firstName + " " + contactObj.lastName;
+});
 
 document
   .querySelectorAll("[data-tab-target]")
