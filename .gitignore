@@ -105,3 +105,10 @@ dist
 
 # compressed files
 *.zip
+
+# vendor library
+vendorlib/
+
+# webpack config
+webpack.dev.js
+webpack.prod.js
