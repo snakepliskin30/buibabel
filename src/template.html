@@ -10,10 +10,7 @@
       crossorigin="anonymous"
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
     <link href="../vendorlib/jquery-ui.min.css" rel="stylesheet" />
     <link href="../vendorlib/jquery-ui.structure.min.css" rel="stylesheet" />
     <link href="../vendorlib/jquery-ui.theme.min.css" rel="stylesheet" />
@@ -21,26 +18,19 @@
     <link href="../vendorlib/select.dataTables.min.css" rel="stylesheet" />
     <link href="../vendorlib/bootstrap.min.css" rel="stylesheet" />
     <script>
-      ORACLE_SERVICE_CLOUD.extension_loader
-        .load("SocoBUIExt")
-        .then(function (extensionProvider) {
-          extensionProvider.registerWorkspaceExtension(function (
-            workspaceRecord
-          ) {
-            //workspaceRecord.editWorkspaceRecord('Contact',434,callbackFunction);
+      ORACLE_SERVICE_CLOUD.extension_loader.load("SocoBUIExt").then(function (extensionProvider) {
+        extensionProvider.registerWorkspaceExtension(function (workspaceRecord) {
+          //workspaceRecord.editWorkspaceRecord('Contact',434,callbackFunction);
 
-            const btn = document.getElementById("startsvcbtn");
-            btn.addEventListener("click", (e) => {
-              localStorage.setItem("context", "start");
-              workspaceRecord.createWorkspaceRecord(
-                "Contact",
-                callbackFunction
-              );
-            });
+          const btn = document.getElementById("startsvcbtn");
+          btn.addEventListener("click", (e) => {
+            localStorage.setItem("context", "start");
+            workspaceRecord.createWorkspaceRecord("Contact", callbackFunction);
           });
-
-          //const posts = fetch("https://jsonplaceholder.typicode.com/posts");
         });
+
+        //const posts = fetch("https://jsonplaceholder.typicode.com/posts");
+      });
 
       function callbackFunction(workspaceRecord) {
         // Perform some operation after opening the workspace record.
@@ -66,21 +56,14 @@
                 <div class="info-2">
                   <h3 id="acct-name">The Captain Alvin Patrimonio</h3>
                   <h6 id="addr-line-1">Blk 2 Lot 9 Grand Parkplace</h6>
-                  <h6 id="addr-line-2">
-                    Brgy Anabu 2, Imus, Cavite, Philippines
-                  </h6>
+                  <h6 id="addr-line-2">Brgy Anabu 2, Imus, Cavite, Philippines</h6>
                 </div>
               </div>
             </div>
             <div class="horizontal-line"></div>
             <div class="main-headers">
-              <h4>
-                <i class="far fa-address-book icon color-primary"></i>Account
-                Summary
-              </h4>
-              <a class="btn-link-sm" data-tab-link="#sub-account-view">
-                View Sub Accounts
-              </a>
+              <h4><i class="far fa-address-book icon color-primary"></i>Account Summary</h4>
+              <a class="btn-link-sm" data-tab-link="#sub-account-view"> View Sub Accounts </a>
             </div>
             <div class="horizontal-line"></div>
             <div class="acct-summary">
@@ -113,10 +96,7 @@
               <h6 class="field-label">Email</h6>
               <h5 class="field-value" id="email"></h5>
               <div class="alert-header">
-                <h4>
-                  <i class="fas fa-user-friends icon color-primary"></i>Critical
-                  Alerts
-                </h4>
+                <h4><i class="fas fa-user-friends icon color-primary"></i>Critical Alerts</h4>
                 <a class="btn-link-sm" id="viewAllBtn"> View All </a>
               </div>
             </div>
@@ -128,10 +108,7 @@
             </div>
             <div class="enrolled-programs">
               <div class="program-header">
-                <h4>
-                  <i class="fas fa-trophy icon color-primary"></i>Enrolled
-                  Programs
-                </h4>
+                <h4><i class="fas fa-trophy icon color-primary"></i>Enrolled Programs</h4>
               </div>
               <hr class="x-line-thin acct-x-line" />
               <div class="enrolled-prog">
@@ -168,5 +145,6 @@
     <script defer="defer" src="../vendorlib/datatables.min.js"></script>
     <script defer="defer" src="../vendorlib/dataTables.select.min.js"></script>
     <script defer="defer" src="../vendorlib/bootstrap.min.js"></script>
+    <script defer="defer" src="../vendorlib/cleave.min.js"></script>
   </body>
 </html>
